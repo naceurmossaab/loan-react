@@ -1,11 +1,25 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import ReactDOM from "react-dom"
 import "./index.css"
+const products = require("../build/public/products.json")
 
-const App = () => (
-    <div className="w-full h-full flex justify-center items-center">
-        <h1>Hello There!</h1>
-    </div>
-)
+import Navbar from "@components/navbar/"
+import AmountCalculator from "@components/amountCalculator/"
 
-ReactDOM.render(<App />, document.getElementById("root"))
+const App = ({ data }: any) => {
+    const [loanType, setLoanType] = useState(data[1])
+
+    return (
+        <div className="app">
+            <div className="title">
+                Let's plan your <span>loan</span>
+            </div>
+            <div className="card">
+                <Navbar data={data} fn={setLoanType} />
+                <AmountCalculator loan={loanType} />
+            </div>
+        </div>
+    )
+}
+
+ReactDOM.render(<App data={products} />, document.getElementById("root"))

@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brandColorPrimary: #1b31a8;
+    --shadow-level-4: rgba(30, 42, 50, 0.08);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 150px;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.icon-automobile {
+    width: 86px;
+    height: 86px;
+}
+
+.icon-house {
+    margin-top: 9px;
+    margin-right: 5px;
+    width: 74px;
+    height: 69px;
+}
+
+.icon-cash {
+    margin-top: 9px;
+    width: 69px;
+    height: 69px;
+}
+
+.active {
+    border-bottom: 3px solid var(--brandColorPrimary);
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        margin: 10px 100px;
+    }
+}
