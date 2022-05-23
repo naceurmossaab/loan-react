@@ -11,54 +11,17 @@
     src: url(./assets/fonts/static/Rubik-Bold.ttf);
 }
 
-:root {
-    --bc-color: #e5e5e5;
-    --brandColorPrimary: #1b31a8;
-    --neutralWhite: #ffffff;
-    --shadow-level-4: rgba(30, 42, 50, 0.08);
-}
-
-html {
-    background-color: var(--bc-color);
-}
-
-.app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.title {
-    font-family: "WorkSans-Regular";
-    text-align: center;
-    margin: 30px 0;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 400;
-    color: var(--brandColorPrimary);
-}
-.title span {
-    font-weight: 700;
-}
-
-.card {
-    width: 560px;
-    background: var(--neutralWhite);
-
-    -webkit-box-shadow: 0px 16px 32px var(--shadow-level-4);
-    box-shadow: 0px 16px 32px var(--shadow-level-4);
-    border-radius: 8px;
-}
-
-@media (max-width: 600px) {
-    .app {
-        overflow-x: hidden;
-        margin-bottom: 50px;
+@layer base {
+    html {
+        background-color: #e5e5e5;
+        font-family: WorkSans-Regular, system-ui, sans-serif;
     }
+}
 
-    .card {
-        min-width: 100%;
-        padding: 0 14px;
+@layer utilities {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
 }
